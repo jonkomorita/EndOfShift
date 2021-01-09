@@ -1,19 +1,47 @@
-﻿using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
+﻿using Android.Widget;
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace EndOfShift
 {
     class Support
     {
+        public const int Hundred = 100, Fifty = 50, Twenty = 20, Ten = 10, Five = 5, One = 1, Two = 2, Drop = 500;
+        public const double Quarter = 0.25, Dime = 0.1, Nickel = 0.05, Penny = 0.01, HalfDollar = 0.5, Dollar = 1.0;
+        /**
+          * 0 - hundreds
+          * 1 - fifties
+          * 2 - twenties
+          * 3 - tens
+          * 4 - fives
+          * 5 - ones
+          * 6 - twos
+          * 7 - quarters
+          * 8 - dimes
+          * 9 - nickels
+          * 10 - pennies
+          * 11 - dollars
+          * 12 - half dollars
+          */
+        public static ArrayList getValues(ArrayList parsedValues)
+        {
+            ArrayList vals = new ArrayList();
+            vals.Add(Hundred * (int)parsedValues[0]);
+            vals.Add(Fifty * (int)parsedValues[1]);
+            vals.Add(Twenty * (int)parsedValues[2]);
+            vals.Add(Ten * (int)parsedValues[3]);
+            vals.Add(Five * (int)parsedValues[4]);
+            vals.Add(One * (int)parsedValues[5]);
+            vals.Add(Two * (int)parsedValues[6]);
+            vals.Add(Quarter * (int)parsedValues[7]);
+            vals.Add(Dime * (int)parsedValues[8]);
+            vals.Add(Nickel * (int)parsedValues[9]);
+            vals.Add(Penny * (int)parsedValues[10]);
+            vals.Add(Dollar * (int)parsedValues[11]);
+            vals.Add(HalfDollar * (int)parsedValues[12]);
+            return vals;
+        }
+
         public static ArrayList parseValues(EditText etHundreds, EditText etFifties, EditText etTwenties, EditText etTens, EditText etFives, EditText etOnes,
             EditText etTwos, EditText etQuarters, EditText etDimes, EditText etNickels, EditText etPennies, EditText etDollars, EditText etHalfDollars)
         {
@@ -47,6 +75,16 @@ namespace EndOfShift
                 quarters, dimes, nickels, pennies, dollars, halfDollars
             };
 
+        }
+
+        public static double calculateTotalRegister(ArrayList vals)
+        {
+            double total = 0.0;
+            foreach (object d in vals)
+            {
+                total += Convert.ToDouble(d);
+            }
+            return total;
         }
     }
 }
