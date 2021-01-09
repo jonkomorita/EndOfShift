@@ -11,9 +11,6 @@ namespace EndOfShift
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
-        
-        ArrayList editTextList = new ArrayList();
-        ArrayList textViewList = new ArrayList();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -24,56 +21,22 @@ namespace EndOfShift
 
             // References to all needed components
             EditText etHundreds = FindViewById<EditText>(Resource.Id.etHundreds);
-            TextView txtHundreds = FindViewById<TextView>(Resource.Id.txtHundredsTotal);
-
             EditText etFifties = FindViewById<EditText>(Resource.Id.etFifties);
-            TextView txtFifties = FindViewById<TextView>(Resource.Id.txtFiftiesTotal);
-
             EditText etTwenties = FindViewById<EditText>(Resource.Id.etTwenties);
-            TextView txtTwenties = FindViewById<TextView>(Resource.Id.txtTwentiesTotal);
-
             EditText etTens = FindViewById<EditText>(Resource.Id.etTens);
-            TextView txtTens = FindViewById<TextView>(Resource.Id.txtTensTotal);
-
             EditText etFives = FindViewById<EditText>(Resource.Id.etFives);
-            TextView txtFives = FindViewById<TextView>(Resource.Id.txtFivesTotal);
-
             EditText etOnes = FindViewById<EditText>(Resource.Id.etOnes);
-            TextView txtOnes = FindViewById<TextView>(Resource.Id.txtOnesTotal);
-
             EditText etTwos = FindViewById<EditText>(Resource.Id.etTwos);
-            TextView txtTwos = FindViewById<TextView>(Resource.Id.txtTwosTotal);
-
             EditText etQuarters = FindViewById<EditText>(Resource.Id.etQuarters);
-            TextView txtQuarters = FindViewById<TextView>(Resource.Id.txtQuartersTotal);
-
             EditText etDimes = FindViewById<EditText>(Resource.Id.etDimes);
-            TextView txtDimes = FindViewById<TextView>(Resource.Id.txtDimesTotal);
-
             EditText etNickels = FindViewById<EditText>(Resource.Id.etNickels);
-            TextView txtNickels = FindViewById<TextView>(Resource.Id.txtNickelsTotal);
-
             EditText etPennies = FindViewById<EditText>(Resource.Id.etPennies);
-            TextView txtPennies = FindViewById<TextView>(Resource.Id.txtPenniesTotal);
-
             EditText etDollars = FindViewById<EditText>(Resource.Id.etDollars);
-            TextView txtDollars = FindViewById<TextView>(Resource.Id.txtDollarsTotal);
-
             EditText etHalfDollars = FindViewById<EditText>(Resource.Id.etHalfDollars);
-            TextView txtHalfDollars = FindViewById<TextView>(Resource.Id.txtHalfDollarsTotal);
-
-            TextView txtTotal = FindViewById<TextView>(Resource.Id.txtTotalDisp);
 
 
             //TextChanged events for EditTexts [Bills]
-            etHundreds.TextChanged += (object sender, Android.Text.TextChangedEventArgs e) =>
-            {
-                ArrayList vals = Support.getValues(Support.parseValues(etHundreds, etFifties, etTwenties, etTens, etFives, etOnes, etTwos, 
-                                                        etQuarters, etDimes, etNickels, etPennies, etDollars, etHalfDollars));
-                txtHundreds.Text = vals[0].ToString();
-                txtTotal.Text = Support.calculateTotalRegister(vals).ToString();
-            };
-
+            etHundreds.TextChanged += ETextChanged;
             etFifties.TextChanged += ETextChanged;
             etTwenties.TextChanged += ETextChanged;
             etTens.TextChanged += ETextChanged;
