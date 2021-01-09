@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:p4="http://xamarin.com/mono/android/designer"
+    android:id="@+id/container_scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <GridLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:columnCount="3"
+        android:rowCount="17"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/gridLayout1">
+
+        <!-- BILLS -->
+        <TextView
+            android:text="Bills"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/txtBills"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="#"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/txtNum"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="Total"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/txtTotalBills"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="2"
+            android:layout_row="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- HUNDREDS -->
+        <TextView
+            android:text="$100"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/txtHundreds"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:inputType="number"
+            android:id="@+id/etHundreds"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="1"
+            android:layout_row="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="3" />
+        <TextView
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/txtHundredsTotal"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="2"
+            android:layout_row="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- FIFTIES -->
+        <TextView
+            android:text="$50"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/txtFifties"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="0"
+            android:layout_row="2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:inputType="number"
+            android:id="@+id/etFifties"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="1"
+            android:layout_row="2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="3"/>
+        <TextView
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/txtFiftiesTotal"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="2"
+            android:layout_row="2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- TWENTIES -->
+        <TextView
+            android:text="$20"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/txtTwenties"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="0"
+            android:layout_row="3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:inputType="number"
+            android:id="@+id/etTwenties"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="1"
+            android:layout_row="3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="3"/>
+        <TextView
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/txtTwentiesTotal"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="2"
+            android:layout_row="3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- TENS -->
+        <TextView
+            android:text="$10"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/txtTens"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="0"
+            android:layout_row="4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:inputType="number"
+            android:id="@+id/etTens"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="1"
+            android:layout_row="4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="3"/>
+        <TextView
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/txtTensTotal"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="2"
+            android:layout_row="4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- FIVES -->
+        <TextView
+            android:text="$5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/txtFives"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="0"
+            android:layout_row="5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:inputType="number"
+            android:id="@+id/etFives"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="1"
+            android:layout_row="5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="3"/>
+        <TextView
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/txtFivesTotal"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="2"
+            android:layout_row="5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- ONES -->
+        <TextView
+            android:text="$1"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/txtOnes"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="0"
+            android:layout_row="6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:inputType="number"
+            android:id="@+id/etOnes"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="1"
+            android:layout_row="6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="3"/>
+        <TextView
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/txtOnesTotal"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="2"
+            android:layout_row="6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- TWOS -->
+        <TextView
+            android:text="$2"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/txtTwos"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="0"
+            android:layout_row="7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:inputType="number"
+            android:id="@+id/etTwos"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="1"
+            android:layout_row="7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="3"/>
+        <TextView
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/txtTwosTotal"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="2"
+            android:layout_row="7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- COINS -->
+        <TextView
+            android:text="Coins"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/txtCoins"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="0"
+            android:layout_row="8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="#"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/txtNumCoins"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="1"
+            android:layout_row="8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="Total"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/txtTotalCoins"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="2"
+            android:layout_row="8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- QUARTERS -->
+        <TextView
+            android:text="$0.25"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/txtQuarters"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="0"
+            android:layout_row="9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:inputType="number"
+            android:id="@+id/etQuarters"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="1"
+            android:layout_row="9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="3"/>
+        <TextView
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/txtQuartersTotal"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="2"
+            android:layout_row="9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- DIMES -->
+        <TextView
+            android:text="$0.10"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/txtDimes"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="0"
+            android:layout_row="10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:inputType="number"
+            android:id="@+id/etDimes"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="1"
+            android:layout_row="10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="3"/>
+        <TextView
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/txtDimesTotal"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="2"
+            android:layout_row="10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- NICKELS -->
+        <TextView
+            android:text="$0.05"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/txtNickels"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="0"
+            android:layout_row="11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:inputType="number"
+            android:id="@+id/etNickels"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="1"
+            android:layout_row="11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="3"/>
+        <TextView
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/txtNickelsTotal"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="2"
+            android:layout_row="11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- PENNIES -->
+        <TextView
+            android:text="$0.01"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/txtPennies"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="0"
+            android:layout_row="12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:inputType="number"
+            android:id="@+id/etPennies"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="1"
+            android:layout_row="12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="3"/>
+        <TextView
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/txtPenniesTotal"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="2"
+            android:layout_row="12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- DOLLAR -->
+        <TextView
+            android:text="$1.00"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/txtDollars"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="0"
+            android:layout_row="13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:inputType="number"
+            android:id="@+id/etDollars"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="1"
+            android:layout_row="13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="3"/>
+        <TextView
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/txtDollarsTotal"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="2"
+            android:layout_row="13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- HALF DOLLAR -->
+        <TextView
+            android:text="$0.50"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/txtHalfDollars"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="0"
+            android:layout_row="14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:inputType="number"
+            android:id="@+id/etHalfDollars"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="1"
+            android:layout_row="14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="3"/>
+        <TextView
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/txtHalfDollarsTotal"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="2"
+            android:layout_row="14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- Total -->
+        <TextView
+            android:text="Total"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/txtTotal"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="0"
+            android:layout_row="15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/txtTotalDisp"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="2"
+            android:layout_column="1"
+            android:layout_row="15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- Drops -->
+        <TextView
+            android:text="# Drops"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/txtDrops"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="0"
+            android:layout_row="16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:inputType="number"
+            android:id="@+id/etDrops"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="1"
+            android:layout_row="16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="3"/>
+        <TextView
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/txtDropsTotal"
+            android:gravity="center"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_column="2"
+            android:layout_row="16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </GridLayout>
+
+</ScrollView>
