@@ -193,13 +193,6 @@ namespace EndOfShift
 
         }
 
-        public void BTextChanged(object sender, EventArgs e )
-        {
-            var changed = (EditText)sender;
-            EditText etBefore = FindViewById<EditText>(changed.Id);
-            etBefore.Text = "";
-        }
-
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);

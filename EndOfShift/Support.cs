@@ -49,7 +49,7 @@ namespace EndOfShift
 
             for( int i = 0; i < vals.Length; i++)
             {
-                if (vals[i].Equals(""))
+                if (vals[i].Equals("") || vals[i].Equals(null))
                     vals[i] = "0";
             }
             // if we try to fill edittext 20 before 50 or 100, then 50 & 100 will show up at blank and will fail parse
