@@ -127,68 +127,68 @@ namespace EndOfShift
             
             if( id == Resource.Id.etHundreds)
             {
-                txtHundreds.Text = vals[0].ToString();
-                txtTotal.Text = Support.calculateTotalRegister(vals).ToString();
+                txtHundreds.Text = "$" + vals[0].ToString();
+                txtTotal.Text = Support.formattedDecimal(Support.calculateTotalRegister(vals));
             }
             else if( id == Resource.Id.etFifties)
             {
-                txtFifties.Text = vals[1].ToString();
-                txtTotal.Text = Support.calculateTotalRegister(vals).ToString();
+                txtFifties.Text = "$" + vals[1].ToString();
+                txtTotal.Text = Support.formattedDecimal(Support.calculateTotalRegister(vals));
             }
             else if (id == Resource.Id.etTwenties)
             {
-                txtTwenties.Text = vals[2].ToString();
-                txtTotal.Text = Support.calculateTotalRegister(vals).ToString();
+                txtTwenties.Text = "$" + vals[2].ToString();
+                txtTotal.Text = Support.formattedDecimal(Support.calculateTotalRegister(vals));
             }
             else if (id == Resource.Id.etTens)
             {
-                txtTens.Text = vals[3].ToString();
-                txtTotal.Text = Support.calculateTotalRegister(vals).ToString();
+                txtTens.Text = "$" + vals[3].ToString();
+                txtTotal.Text = Support.formattedDecimal(Support.calculateTotalRegister(vals));
             }
             else if (id == Resource.Id.etFives)
             {
-                txtFives.Text = vals[4].ToString();
-                txtTotal.Text = Support.calculateTotalRegister(vals).ToString();
+                txtFives.Text = "$" + vals[4].ToString();
+                txtTotal.Text = Support.formattedDecimal(Support.calculateTotalRegister(vals));
             }
             else if (id == Resource.Id.etOnes)
             {
-                txtOnes.Text = vals[5].ToString();
-                txtTotal.Text = Support.calculateTotalRegister(vals).ToString();
+                txtOnes.Text = "$" + vals[5].ToString();
+                txtTotal.Text = Support.formattedDecimal(Support.calculateTotalRegister(vals));
             }
             else if (id == Resource.Id.etTwos)
             {
-                txtTwos.Text = vals[6].ToString();
-                txtTotal.Text = Support.calculateTotalRegister(vals).ToString();
+                txtTwos.Text = "$" + vals[6].ToString();
+                txtTotal.Text = Support.formattedDecimal(Support.calculateTotalRegister(vals));
             }
             else if (id == Resource.Id.etQuarters)
             {
-                txtQuarters.Text = vals[7].ToString();
-                txtTotal.Text = Support.calculateTotalRegister(vals).ToString();
+                txtQuarters.Text = Support.formattedDecimal(Convert.ToDouble(vals[7]));
+                txtTotal.Text = Support.formattedDecimal(Support.calculateTotalRegister(vals));
             }
             else if (id == Resource.Id.etDimes)
             {
-                txtDimes.Text = vals[8].ToString();
-                txtTotal.Text = Support.calculateTotalRegister(vals).ToString();
+                txtDimes.Text = Support.formattedDecimal(Convert.ToDouble(vals[8]));
+                txtTotal.Text = Support.formattedDecimal(Support.calculateTotalRegister(vals));
             }
             else if (id == Resource.Id.etNickels)
             {
-                txtNickels.Text = vals[9].ToString();
-                txtTotal.Text = Support.calculateTotalRegister(vals).ToString();
+                txtNickels.Text = Support.formattedDecimal(Convert.ToDouble(vals[9]));
+                txtTotal.Text = Support.formattedDecimal(Support.calculateTotalRegister(vals));
             }
             else if (id == Resource.Id.etPennies)
             {
-                txtPennies.Text = vals[10].ToString();
-                txtTotal.Text = Support.calculateTotalRegister(vals).ToString();
+                txtPennies.Text = Support.formattedDecimal(Convert.ToDouble(vals[10]));
+                txtTotal.Text = Support.formattedDecimal(Support.calculateTotalRegister(vals));
             }
             else if (id == Resource.Id.etDollars)
             {
-                txtDollars.Text = vals[11].ToString();
-                txtTotal.Text = Support.calculateTotalRegister(vals).ToString();
+                txtDollars.Text = Support.formattedDecimal(Convert.ToDouble(vals[11]));
+                txtTotal.Text = Support.formattedDecimal(Support.calculateTotalRegister(vals));
             }
             else if (id == Resource.Id.etHalfDollars)
             {
-                txtHalfDollars.Text = vals[12].ToString();
-                txtTotal.Text = Support.calculateTotalRegister(vals).ToString();
+                txtHalfDollars.Text = Support.formattedDecimal(Convert.ToDouble(vals[12]));
+                txtTotal.Text = Support.formattedDecimal(Support.calculateTotalRegister(vals));
             }
 
         }

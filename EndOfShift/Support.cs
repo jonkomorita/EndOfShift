@@ -47,14 +47,13 @@ namespace EndOfShift
             int hundreds, fifties, twenties, tens, fives, ones, twos, quarters, dimes, nickels, pennies, dollars, halfDollars;
             hundreds = fifties = twenties = tens = fives = ones = twos = quarters = dimes = nickels = pennies = dollars = halfDollars = 0;
 
+            // if EditText[i].Text is blank or null, replace with 0
             for( int i = 0; i < vals.Length; i++)
             {
                 if (vals[i].Equals("") || vals[i].Equals(null))
                     vals[i] = "0";
             }
-            // if we try to fill edittext 20 before 50 or 100, then 50 & 100 will show up at blank and will fail parse
-            // which is why nothing changes
-            // EditText bug might be here
+
             try
             {
                 hundreds = int.Parse(vals[0]);
@@ -93,5 +92,8 @@ namespace EndOfShift
             }
             return total;
         }
+
+        public static string formattedDecimal( double d) => string.Format("{0:C}", d);
+        
     }
 }
