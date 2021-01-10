@@ -42,27 +42,31 @@ namespace EndOfShift
             return vals;
         }
 
-        public static ArrayList parseValues(EditText etHundreds, EditText etFifties, EditText etTwenties, EditText etTens, EditText etFives, EditText etOnes,
-            EditText etTwos, EditText etQuarters, EditText etDimes, EditText etNickels, EditText etPennies, EditText etDollars, EditText etHalfDollars)
+        public static ArrayList parseValues(string etHundreds, string etFifties, string etTwenties, string etTens, string etFives, string etOnes,
+            string etTwos, string etQuarters, string etDimes, string etNickels, string etPennies, string etDollars, string etHalfDollars)
         {
             ArrayList ret = new ArrayList();
             int hundreds, fifties, twenties, tens, fives, ones, twos, quarters, dimes, nickels, pennies, dollars, halfDollars;
             hundreds = fifties = twenties = tens = fives = ones = twos = quarters = dimes = nickels = pennies = dollars = halfDollars = 0;
+
+            // if we try to fill edittext 20 before 50 or 100, then 50 & 100 will show up at blank and will fail parse
+            // which is why nothing changes
+            // EditText bug might be here
             try
             {
-                hundreds = int.Parse(etHundreds.Text);
-                fifties = int.Parse(etFifties.Text);
-                twenties = int.Parse(etTwenties.Text);
-                tens = int.Parse(etTens.Text);
-                fives = int.Parse(etFives.Text);
-                ones = int.Parse(etOnes.Text);
-                twos = int.Parse(etTwos.Text);
-                quarters = int.Parse(etQuarters.Text);
-                dimes = int.Parse(etDimes.Text);
-                nickels = int.Parse(etNickels.Text);
-                pennies = int.Parse(etPennies.Text);
-                dollars = int.Parse(etDollars.Text);
-                halfDollars = int.Parse(etHalfDollars.Text);
+                hundreds = int.Parse(etHundreds);
+                fifties = int.Parse(etFifties);
+                twenties = int.Parse(etTwenties);
+                tens = int.Parse(etTens);
+                fives = int.Parse(etFives);
+                ones = int.Parse(etOnes);
+                twos = int.Parse(etTwos);
+                quarters = int.Parse(etQuarters);
+                dimes = int.Parse(etDimes);
+                nickels = int.Parse(etNickels);
+                pennies = int.Parse(etPennies);
+                dollars = int.Parse(etDollars);
+                halfDollars = int.Parse(etHalfDollars);
             }
             catch (Exception ex)
             {

@@ -113,11 +113,12 @@ namespace EndOfShift
 
             TextView txtTotal = FindViewById<TextView>(Resource.Id.txtTotalDisp);
 
-            ArrayList vals = Support.getValues(Support.parseValues(etHundreds, etFifties, etTwenties, etTens, etFives, etOnes, etTwos, 
-                                                                   etQuarters, etDimes, etNickels, etPennies, etDollars, etHalfDollars));
+            ArrayList vals = Support.getValues(Support.parseValues(etHundreds.Text, etFifties.Text, etTwenties.Text, etTens.Text, etFives.Text, etOnes.Text, etTwos.Text, 
+                                                                   etQuarters.Text, etDimes.Text, etNickels.Text, etPennies.Text, etDollars.Text, etHalfDollars.Text));
             
             if( id == Resource.Id.etHundreds)
             {
+                var v = vals[0].ToString();
                 txtHundreds.Text = vals[0].ToString();
                 txtTotal.Text = Support.calculateTotalRegister(vals).ToString();
             }
@@ -133,6 +134,9 @@ namespace EndOfShift
             }
             else if (id == Resource.Id.etTens)
             {
+                var x = etTens.Text;
+                //vals = Support.getValues(Support.parseValues(etHundreds.Text, etFifties.Text, etTwenties.Text, etTens.Text, etFives.Text, etOnes.Text, etTwos.Text,
+                  //                                                  etQuarters.Text, etDimes.Text, etNickels.Text, etPennies.Text, etDollars.Text, etHalfDollars.Text));
                 txtTens.Text = vals[3].ToString();
                 txtTotal.Text = Support.calculateTotalRegister(vals).ToString();
             }
@@ -192,4 +196,5 @@ namespace EndOfShift
 
         
     }
+
 }

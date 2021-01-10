@@ -64,6 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditText
+            android:text="0"
             android:inputType="number"
             android:id="@+id/etHundreds"
             android:gravity="center"
@@ -75,7 +76,6 @@
             android:layout_height="wrap_content"
             android:maxLength="3" />
         <TextView
-            android:text="0"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/txtHundredsTotal"
             android:gravity="center"
@@ -99,6 +99,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditText
+            android:text="0"
             android:inputType="number"
             android:id="@+id/etFifties"
             android:gravity="center"
@@ -110,7 +111,6 @@
             android:layout_height="wrap_content"
             android:maxLength="3"/>
         <TextView
-            android:text="0"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/txtFiftiesTotal"
             android:gravity="center"
@@ -134,6 +134,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditText
+            android:text="0"
             android:inputType="number"
             android:id="@+id/etTwenties"
             android:gravity="center"
@@ -145,7 +146,6 @@
             android:layout_height="wrap_content"
             android:maxLength="3"/>
         <TextView
-            android:text="0"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/txtTwentiesTotal"
             android:gravity="center"
@@ -169,6 +169,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditText
+            android:text="0"
             android:inputType="number"
             android:id="@+id/etTens"
             android:gravity="center"
@@ -180,7 +181,6 @@
             android:layout_height="wrap_content"
             android:maxLength="3"/>
         <TextView
-            android:text="0"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/txtTensTotal"
             android:gravity="center"
@@ -204,6 +204,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditText
+            android:text="0"
             android:inputType="number"
             android:id="@+id/etFives"
             android:gravity="center"
@@ -215,7 +216,6 @@
             android:layout_height="wrap_content"
             android:maxLength="3"/>
         <TextView
-            android:text="0"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/txtFivesTotal"
             android:gravity="center"
@@ -239,6 +239,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditText
+            android:text="0"
             android:inputType="number"
             android:id="@+id/etOnes"
             android:gravity="center"
@@ -250,7 +251,6 @@
             android:layout_height="wrap_content"
             android:maxLength="3"/>
         <TextView
-            android:text="0"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/txtOnesTotal"
             android:gravity="center"
@@ -274,6 +274,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditText
+            android:text="0"
             android:inputType="number"
             android:id="@+id/etTwos"
             android:gravity="center"
@@ -285,7 +286,6 @@
             android:layout_height="wrap_content"
             android:maxLength="3"/>
         <TextView
-            android:text="0"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/txtTwosTotal"
             android:gravity="center"
@@ -344,6 +344,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditText
+            android:text="0"
             android:inputType="number"
             android:id="@+id/etQuarters"
             android:gravity="center"
@@ -355,7 +356,6 @@
             android:layout_height="wrap_content"
             android:maxLength="3"/>
         <TextView
-            android:text="0"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/txtQuartersTotal"
             android:gravity="center"
@@ -379,6 +379,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditText
+            android:text="0"
             android:inputType="number"
             android:id="@+id/etDimes"
             android:gravity="center"
@@ -390,7 +391,6 @@
             android:layout_height="wrap_content"
             android:maxLength="3"/>
         <TextView
-            android:text="0"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/txtDimesTotal"
             android:gravity="center"
@@ -414,6 +414,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditText
+            android:text="0"
             android:inputType="number"
             android:id="@+id/etNickels"
             android:gravity="center"
@@ -425,7 +426,6 @@
             android:layout_height="wrap_content"
             android:maxLength="3"/>
         <TextView
-            android:text="0"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/txtNickelsTotal"
             android:gravity="center"
@@ -449,6 +449,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditText
+            android:text="0"
             android:inputType="number"
             android:id="@+id/etPennies"
             android:gravity="center"
@@ -460,7 +461,6 @@
             android:layout_height="wrap_content"
             android:maxLength="3"/>
         <TextView
-            android:text="0"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/txtPenniesTotal"
             android:gravity="center"
@@ -484,6 +484,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditText
+            android:text="0"
             android:inputType="number"
             android:id="@+id/etDollars"
             android:gravity="center"
@@ -495,7 +496,6 @@
             android:layout_height="wrap_content"
             android:maxLength="3"/>
         <TextView
-            android:text="0"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/txtDollarsTotal"
             android:gravity="center"
@@ -519,6 +519,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditText
+            android:text="0"
             android:inputType="number"
             android:id="@+id/etHalfDollars"
             android:gravity="center"
@@ -530,7 +531,6 @@
             android:layout_height="wrap_content"
             android:maxLength="3"/>
         <TextView
-            android:text="0"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/txtHalfDollarsTotal"
             android:gravity="center"
