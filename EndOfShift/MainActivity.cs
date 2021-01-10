@@ -4,6 +4,9 @@ using Android.Support.V7.App;
 using Android.Runtime;
 using Android.Widget;
 using System.Collections;
+using System;
+using Android.Views;
+using static Android.Views.View;
 
 namespace EndOfShift
 {
@@ -36,21 +39,21 @@ namespace EndOfShift
 
 
             //TextChanged events for EditTexts [Bills]
-            etHundreds.TextChanged += ETextChanged;
-            etFifties.TextChanged += ETextChanged;
-            etTwenties.TextChanged += ETextChanged;
-            etTens.TextChanged += ETextChanged;
-            etFives.TextChanged += ETextChanged;
-            etOnes.TextChanged += ETextChanged;
-            etTwos.TextChanged += ETextChanged;
+            etHundreds.TextChanged += OTextChanged;
+            etFifties.TextChanged += OTextChanged;
+            etTwenties.TextChanged += OTextChanged;
+            etTens.TextChanged += OTextChanged;
+            etFives.TextChanged += OTextChanged;
+            etOnes.TextChanged += OTextChanged;
+            etTwos.TextChanged += OTextChanged;
 
             //TextChanged Events [Coins]
-            etQuarters.TextChanged += ETextChanged;
-            etDimes.TextChanged += ETextChanged;
-            etNickels.TextChanged += ETextChanged;
-            etPennies.TextChanged += ETextChanged;
-            etDollars.TextChanged += ETextChanged;
-            etHalfDollars.TextChanged += ETextChanged;
+            etQuarters.TextChanged += OTextChanged;
+            etDimes.TextChanged += OTextChanged;
+            etNickels.TextChanged += OTextChanged;
+            etPennies.TextChanged += OTextChanged;
+            etDollars.TextChanged += OTextChanged;
+            etHalfDollars.TextChanged += OTextChanged;
         }
         /**
           * 0 - hundreds
@@ -67,10 +70,16 @@ namespace EndOfShift
           * 11 - dollars
           * 12 - half dollars
           */
-        public void ETextChanged(object sender, Android.Text.TextChangedEventArgs ex)
+        public void OTextChanged(object sender, Android.Text.TextChangedEventArgs ex)
         {
             var changed = (EditText)sender;
             var id = changed.Id;
+
+            // Get rid of leading 0 when first clicking
+            EditText etChanged = FindViewById<EditText>(id);
+            string txt = etChanged.Text;
+            if (txt.Length > 1 && txt.StartsWith("0"))
+                etChanged.Text = txt.Substring(1);
 
             EditText etHundreds = FindViewById<EditText>(Resource.Id.etHundreds);
             TextView txtHundreds = FindViewById<TextView>(Resource.Id.txtHundredsTotal);
@@ -113,12 +122,11 @@ namespace EndOfShift
 
             TextView txtTotal = FindViewById<TextView>(Resource.Id.txtTotalDisp);
 
-            ArrayList vals = Support.getValues(Support.parseValues(etHundreds.Text, etFifties.Text, etTwenties.Text, etTens.Text, etFives.Text, etOnes.Text, etTwos.Text, 
-                                                                   etQuarters.Text, etDimes.Text, etNickels.Text, etPennies.Text, etDollars.Text, etHalfDollars.Text));
+            ArrayList vals = Support.getValues(Support.parseValues( new string[] { etHundreds.Text, etFifties.Text, etTwenties.Text, etTens.Text, etFives.Text, etOnes.Text, etTwos.Text, 
+                                                                   etQuarters.Text, etDimes.Text, etNickels.Text, etPennies.Text, etDollars.Text, etHalfDollars.Text }));
             
             if( id == Resource.Id.etHundreds)
             {
-                var v = vals[0].ToString();
                 txtHundreds.Text = vals[0].ToString();
                 txtTotal.Text = Support.calculateTotalRegister(vals).ToString();
             }
@@ -134,9 +142,6 @@ namespace EndOfShift
             }
             else if (id == Resource.Id.etTens)
             {
-                var x = etTens.Text;
-                //vals = Support.getValues(Support.parseValues(etHundreds.Text, etFifties.Text, etTwenties.Text, etTens.Text, etFives.Text, etOnes.Text, etTwos.Text,
-                  //                                                  etQuarters.Text, etDimes.Text, etNickels.Text, etPennies.Text, etDollars.Text, etHalfDollars.Text));
                 txtTens.Text = vals[3].ToString();
                 txtTotal.Text = Support.calculateTotalRegister(vals).ToString();
             }
@@ -187,6 +192,14 @@ namespace EndOfShift
             }
 
         }
+
+        public void BTextChanged(object sender, EventArgs e )
+        {
+            var changed = (EditText)sender;
+            EditText etBefore = FindViewById<EditText>(changed.Id);
+            etBefore.Text = "";
+        }
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
