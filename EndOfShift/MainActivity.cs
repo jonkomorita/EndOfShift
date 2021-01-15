@@ -182,7 +182,7 @@ namespace EndOfShift
             }
             else if (id == Resource.Id.etDollars)
             {
-                txtDollars.Text = Support.formattedDecimal(Convert.ToDouble(vals[11]));
+                txtDollars.Text = "$" + vals[11].ToString();
                 txtTotal.Text = Support.formattedDecimal(Support.calculateTotalRegister(vals));
             }
             else if (id == Resource.Id.etHalfDollars)
