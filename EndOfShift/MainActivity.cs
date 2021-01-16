@@ -5,8 +5,6 @@ using Android.Runtime;
 using Android.Widget;
 using System.Collections;
 using System;
-using Android.Views;
-using static Android.Views.View;
 
 namespace EndOfShift
 {
@@ -36,6 +34,7 @@ namespace EndOfShift
             EditText etPennies = FindViewById<EditText>(Resource.Id.etPennies);
             EditText etDollars = FindViewById<EditText>(Resource.Id.etDollars);
             EditText etHalfDollars = FindViewById<EditText>(Resource.Id.etHalfDollars);
+            EditText etDrops = FindViewById<EditText>(Resource.Id.etDrops);
 
 
             //TextChanged events for EditTexts [Bills]
@@ -54,6 +53,9 @@ namespace EndOfShift
             etPennies.TextChanged += OTextChanged;
             etDollars.TextChanged += OTextChanged;
             etHalfDollars.TextChanged += OTextChanged;
+
+            //TextChanged Event [Drops]
+            etDrops.TextChanged += OTextChanged;
         }
         /**
           * 0 - hundreds
@@ -69,6 +71,7 @@ namespace EndOfShift
           * 10 - pennies
           * 11 - dollars
           * 12 - half dollars
+          * 13 - drops
           */
         public void OTextChanged(object sender, Android.Text.TextChangedEventArgs ex)
         {
@@ -81,6 +84,7 @@ namespace EndOfShift
             if (txt.Length > 1 && txt.StartsWith("0"))
                 etChanged.Text = txt.Substring(1);
 
+            // get reference to EditText and TextViews
             EditText etHundreds = FindViewById<EditText>(Resource.Id.etHundreds);
             TextView txtHundreds = FindViewById<TextView>(Resource.Id.txtHundredsTotal);
 
@@ -122,42 +126,49 @@ namespace EndOfShift
 
             TextView txtTotal = FindViewById<TextView>(Resource.Id.txtTotalDisp);
 
+            EditText etDrops = FindViewById<EditText>(Resource.Id.etDrops);
+            TextView txtDropsTotal = FindViewById<TextView>(Resource.Id.txtDropsTotal);
+
+
+            // Build arraylist of totals [stored as objects]
             ArrayList vals = Support.getValues(Support.parseValues( new string[] { etHundreds.Text, etFifties.Text, etTwenties.Text, etTens.Text, etFives.Text, etOnes.Text, etTwos.Text, 
-                                                                   etQuarters.Text, etDimes.Text, etNickels.Text, etPennies.Text, etDollars.Text, etHalfDollars.Text }));
+                                                                   etQuarters.Text, etDimes.Text, etNickels.Text, etPennies.Text, etDollars.Text, etHalfDollars.Text, etDrops.Text }));
             
+            // Check id for which component we are working on, then convert object in vals to string
+            //  or to a double depending on which one is needed
             if( id == Resource.Id.etHundreds)
             {
-                txtHundreds.Text = "$" + vals[0].ToString();
+                txtHundreds.Text = Support.formattedTotal(vals[0]);
                 txtTotal.Text = Support.formattedDecimal(Support.calculateTotalRegister(vals));
             }
             else if( id == Resource.Id.etFifties)
             {
-                txtFifties.Text = "$" + vals[1].ToString();
+                txtFifties.Text = Support.formattedTotal(vals[1]);
                 txtTotal.Text = Support.formattedDecimal(Support.calculateTotalRegister(vals));
             }
             else if (id == Resource.Id.etTwenties)
             {
-                txtTwenties.Text = "$" + vals[2].ToString();
+                txtTwenties.Text = Support.formattedTotal(vals[2]);
                 txtTotal.Text = Support.formattedDecimal(Support.calculateTotalRegister(vals));
             }
             else if (id == Resource.Id.etTens)
             {
-                txtTens.Text = "$" + vals[3].ToString();
+                txtTens.Text = Support.formattedTotal(vals[3]);
                 txtTotal.Text = Support.formattedDecimal(Support.calculateTotalRegister(vals));
             }
             else if (id == Resource.Id.etFives)
             {
-                txtFives.Text = "$" + vals[4].ToString();
+                txtFives.Text = Support.formattedTotal(vals[4]);
                 txtTotal.Text = Support.formattedDecimal(Support.calculateTotalRegister(vals));
             }
             else if (id == Resource.Id.etOnes)
             {
-                txtOnes.Text = "$" + vals[5].ToString();
+                txtOnes.Text = Support.formattedTotal(vals[5]);
                 txtTotal.Text = Support.formattedDecimal(Support.calculateTotalRegister(vals));
             }
             else if (id == Resource.Id.etTwos)
             {
-                txtTwos.Text = "$" + vals[6].ToString();
+                txtTwos.Text = Support.formattedTotal(vals[6]);
                 txtTotal.Text = Support.formattedDecimal(Support.calculateTotalRegister(vals));
             }
             else if (id == Resource.Id.etQuarters)
@@ -182,13 +193,17 @@ namespace EndOfShift
             }
             else if (id == Resource.Id.etDollars)
             {
-                txtDollars.Text = "$" + vals[11].ToString();
+                txtDollars.Text = Support.formattedTotal(vals[11]);
                 txtTotal.Text = Support.formattedDecimal(Support.calculateTotalRegister(vals));
             }
             else if (id == Resource.Id.etHalfDollars)
             {
                 txtHalfDollars.Text = Support.formattedDecimal(Convert.ToDouble(vals[12]));
                 txtTotal.Text = Support.formattedDecimal(Support.calculateTotalRegister(vals));
+            }
+            else if( id == Resource.Id.etDrops)
+            {
+                txtDropsTotal.Text = Support.formattedTotal(vals[13]);
             }
 
         }
